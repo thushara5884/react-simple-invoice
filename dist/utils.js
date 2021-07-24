@@ -17,5 +17,7 @@ function formatDate(date) {
 }
 
 function formatCurrency(amount) {
-  return (0, _numeral["default"])(amount).format('$0,0.00');
+  var currency = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '$';
+  var formatted = (0, _numeral["default"])(amount).format("0,0.00");
+  return "".concat(currency).concat(formatted);
 }

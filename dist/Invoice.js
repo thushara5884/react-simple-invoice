@@ -23,7 +23,8 @@ function Invoice(_ref) {
       company = _ref.company,
       customer = _ref.customer,
       lang = _ref.lang,
-      notes = _ref.notes;
+      notes = _ref.notes,
+      currency = _ref.currency;
   var invoices = invoicesProp || [invoiceProp];
   var firstInvoice = invoices[0];
 
@@ -122,12 +123,12 @@ function Invoice(_ref) {
         key: item.description
       }, /*#__PURE__*/_react["default"].createElement("td", null, item.description), /*#__PURE__*/_react["default"].createElement("td", null, item.originalAmount && item.originalAmount !== item.amount && /*#__PURE__*/_react["default"].createElement("span", {
         className: "original-amount"
-      }, (0, _utils.formatCurrency)(item.originalAmount)), (0, _utils.formatCurrency)(item.amount)));
+      }, (0, _utils.formatCurrency)(item.originalAmount, currency)), (0, _utils.formatCurrency)(item.amount, currency)));
     }), /*#__PURE__*/_react["default"].createElement("tr", {
       className: "total"
     }, /*#__PURE__*/_react["default"].createElement("td", null), /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("table", null, /*#__PURE__*/_react["default"].createElement("tbody", null, /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", {
       className: "subheading"
-    }, "Total"), /*#__PURE__*/_react["default"].createElement("td", null, (0, _utils.formatCurrency)(totalAmount))))))))), notes && /*#__PURE__*/_react["default"].createElement("div", {
+    }, "Total"), /*#__PURE__*/_react["default"].createElement("td", null, (0, _utils.formatCurrency)(totalAmount, currency))))))))), notes && /*#__PURE__*/_react["default"].createElement("div", {
       style: {
         marginTop: 30
       }

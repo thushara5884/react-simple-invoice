@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
         amount: 2.99,
       },
     ],
+    discount: 5
   };
 
   const invoice2 = { ...invoice1 };

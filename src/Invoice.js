@@ -102,6 +102,11 @@ const styles = `
   margin-right: 5px;
 }
 
+.total-discount {
+  margin-right: 5px;
+  color: #888;
+}
+
 @media only screen and (max-width: 600px) {
   .invoice-box table tr.top table td{
     width:100%;
@@ -269,7 +274,10 @@ export default function Invoice({
                           <tr>
                             <td className="subheading">Total</td>
                             <td>
-                              {formatCurrency(totalAmount, currency)}
+                            {
+                              invoice.discount && <del className="total-discount">{formatCurrency(totalAmount, currency)}</del>
+                            }
+                              {formatCurrency(totalAmount - invoice.discount, currency)}
                             </td>
                           </tr>
                         </tbody>
@@ -309,6 +317,7 @@ const InvoicePropType = PropTypes.shape({
   }).isRequired).isRequired,
   name: PropTypes.string,
   terms: PropTypes.string,
+  discount: PropTypes.number,
 });
 
 Invoice.propTypes = {

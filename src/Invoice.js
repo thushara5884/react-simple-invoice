@@ -275,7 +275,7 @@ export default function Invoice({
                             <td className="subheading">Total</td>
                             <td>
                             {
-                              invoice.discount && <del className="total-discount">{formatCurrency(totalAmount, currency)}</del>
+                              !!invoice.discount && <del className="total-discount">{formatCurrency(totalAmount, currency)}</del>
                             }
                               {formatCurrency(totalAmount - invoice.discount, currency)}
                             </td>

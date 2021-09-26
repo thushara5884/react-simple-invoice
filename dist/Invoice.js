@@ -128,7 +128,7 @@ function Invoice(_ref) {
       className: "total"
     }, /*#__PURE__*/_react["default"].createElement("td", null), /*#__PURE__*/_react["default"].createElement("td", null, /*#__PURE__*/_react["default"].createElement("table", null, /*#__PURE__*/_react["default"].createElement("tbody", null, /*#__PURE__*/_react["default"].createElement("tr", null, /*#__PURE__*/_react["default"].createElement("td", {
       className: "subheading"
-    }, "Total"), /*#__PURE__*/_react["default"].createElement("td", null, invoice.discount && /*#__PURE__*/_react["default"].createElement("del", {
+    }, "Total"), /*#__PURE__*/_react["default"].createElement("td", null, !!invoice.discount && /*#__PURE__*/_react["default"].createElement("del", {
       className: "total-discount"
     }, (0, _utils.formatCurrency)(totalAmount, currency)), (0, _utils.formatCurrency)(totalAmount - invoice.discount, currency))))))))), notes && /*#__PURE__*/_react["default"].createElement("div", {
       style: {
